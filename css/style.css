@@ -1,0 +1,200 @@
+/* ── Variáveis globais ── */
+:root {
+  --blue:        #1B6DB8;
+  --blue-dark:   #145494;
+  --blue-light:  #EBF3FB;
+  --yellow:      #F5A623;
+  --yellow-dark: #D4891A;
+  --green:       #28A745;
+  --red:         #EF4444;
+  --gray:        #6B7E91;
+  --border:      #D6E4F0;
+  --bg:          #F0F4F8;
+  --white:       #FFFFFF;
+  --text:        #1A2B3C;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Navbar ── */
+.navbar-cp {
+  background: var(--blue);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-cp .logo-img {
+  height: 36px;
+  object-fit: contain;
+}
+
+.navbar-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: none;
+  cursor: default;
+}
+
+.pill-yellow { color: var(--yellow); }
+
+/* ── Bottom Nav ── */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-top: 1px solid var(--border);
+  display: flex;
+  z-index: 100;
+}
+
+.bottom-nav a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 0;
+  text-decoration: none;
+  color: #9AABB8;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+
+.bottom-nav a.active,
+.bottom-nav a:hover {
+  color: var(--blue);
+}
+
+.bottom-nav a .nav-icon {
+  width: 32px;
+  height: 26px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: background 0.2s;
+}
+
+.bottom-nav a.active .nav-icon {
+  background: var(--blue-light);
+}
+
+/* ── Page wrapper ── */
+.page-wrapper {
+  background: var(--bg);
+  min-height: 100vh;
+  padding-bottom: 80px;
+  width: 100%;
+}
+
+.content-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+/* ── Section title ── */
+.section-title {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray);
+  margin-bottom: 12px;
+}
+
+/* ── Buttons ── */
+.btn-cp-primary {
+  background: var(--blue);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-cp-primary:hover  { opacity: 0.9; transform: scale(1.02); }
+.btn-cp-primary:active { transform: scale(0.98); }
+
+.btn-cp-yellow {
+  background: var(--yellow);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-cp-yellow:hover { opacity: 0.9; }
+
+/* ── Badges / tags ── */
+.tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+/* ── Responsive ── */
+@media (min-width: 768px) {
+  .page-wrapper {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .bottom-nav {
+    max-width: 100%;
+    left: 0;
+    right: 0;
+    transform: none;
+  }
+}

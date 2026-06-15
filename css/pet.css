@@ -1,0 +1,158 @@
+.pet-display {
+  background: linear-gradient(180deg, #EBF3FB, white);
+  border-radius: 24px;
+  border: 1px solid #D6E4F0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0 12px;
+}
+
+.pet-mood {
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 6px;
+  margin-bottom: 0;
+  color: #28A745;
+}
+
+.pet-stat-label { font-size: 12px; font-weight: 700; color: #1A2B3C; }
+.pet-stat-val   { font-size: 11px; font-weight: 700; color: #6B7E91; }
+
+.pet-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.pet-action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid #D6E4F0;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.pet-action-btn:hover:not(:disabled) { transform: translateY(-2px); }
+.pet-action-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.pet-action-icon { font-size: 26px; margin-bottom: 8px; }
+.pet-action-name { font-size: 13px; font-weight: 800; color: #1A2B3C; margin-bottom: 2px; }
+.pet-action-desc { font-size: 11px; color: #6B7E91; }
+.pet-action-cost { font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 8px; margin-top: 6px; }
+
+.poder-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid #D6E4F0;
+  background: white;
+  transition: all 0.2s;
+}
+
+.poder-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.poder-card-name {
+  font-size: 13px;
+  font-weight: 800;
+  margin-bottom: 3px;
+  word-break: break-word;
+}
+
+.poder-card-info {
+  font-size: 11px;
+  color: #6B7E91;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.poder-card-badge {
+  font-size: 9px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.poder-unlock-btn {
+  font-size: 11px;
+  font-weight: 700;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.2s;
+}
+
+.poder-unlock-btn:hover    { opacity: 0.85; }
+.poder-unlock-btn:disabled { background: #D6E4F0 !important; color: #9AABB8; cursor: not-allowed; }
+
+@media (max-width: 400px) {
+  .poder-card {
+    flex-wrap: wrap;
+  }
+
+  .poder-card > div:last-child {
+    width: 100%;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+  }
+
+  .poder-unlock-btn,
+  .poder-card-badge {
+    width: auto;
+  }
+}
+
+.poder-card.unlocked { border-color: var(--border-color); background: var(--bg-color); }
+.poder-card.locked   { opacity: 0.55; }
+
+.poder-card-icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.poder-card-name   { font-size: 13px; font-weight: 800; margin-bottom: 3px; }
+.poder-card-info   { font-size: 11px; color: #6B7E91; line-height: 1.4; }
+.poder-card-badge  {
+  font-size: 9px; font-weight: 800;
+  padding: 2px 8px; border-radius: 999px;
+  white-space: nowrap; flex-shrink: 0;
+}
+
+.poder-unlock-btn {
+  font-size: 11px; font-weight: 700;
+  color: white;
+  border: none; border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.2s;
+}
+
+.poder-unlock-btn:hover   { opacity: 0.85; }
+.poder-unlock-btn:disabled { background: #D6E4F0 !important; color: #9AABB8; cursor: not-allowed; }

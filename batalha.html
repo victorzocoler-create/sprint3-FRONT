@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Batalha — Health Score Care Plus</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/batalha.css" />
+</head>
+<body style="background:#0f1c2e; min-height:100vh;">
+
+  <!-- Header -->
+  <div class="batalha-header">
+    <button class="batalha-back" onclick="window.location.href='ranking.html'">←</button>
+    <div>
+      <h1 class="batalha-title">Batalha!</h1>
+      <p class="batalha-sub" id="batalha-sub">Seu pet vs oponente</p>
+    </div>
+    <div class="text-end">
+      <p class="batalha-ps-label">Saldo</p>
+      <p class="batalha-ps-val" id="batalha-ps">0 PS</p>
+    </div>
+  </div>
+
+  <!-- Arena -->
+  <div class="arena">
+    <div class="arena-stars" id="arena-stars"></div>
+
+    <!-- HP bars -->
+    <div class="hp-bars">
+      <div class="hp-bar-wrap">
+        <div class="hp-bar-label">Seu Pet</div>
+        <div class="hp-track">
+          <div class="hp-fill hp-fill-green" id="hp-player" style="width:100%"></div>
+        </div>
+        <div class="hp-val" id="hp-player-val">300 HP</div>
+      </div>
+      <div class="hp-bar-wrap">
+        <div class="hp-bar-label" id="opp-name-hp">Oponente</div>
+        <div class="hp-track">
+          <div class="hp-fill hp-fill-red" id="hp-opp" style="width:100%"></div>
+        </div>
+        <div class="hp-val" id="hp-opp-val">300 HP</div>
+      </div>
+    </div>
+
+    <!-- Pets na arena -->
+    <div class="arena-pets">
+      <div class="arena-pet-wrap">
+        <svg id="pet-player" viewBox="0 0 200 220" width="110" height="110"></svg>
+      </div>
+      <div class="arena-center">
+        <p class="arena-round" id="arena-round">Rodada 1/3</p>
+        <div class="arena-vs" id="arena-vs">⚔️</div>
+      </div>
+      <div class="arena-pet-wrap" style="transform:scaleX(-1)">
+        <svg id="pet-opp" viewBox="0 0 200 220" width="110" height="110"></svg>
+      </div>
+    </div>
+
+    <div class="arena-names">
+      <span>Você</span>
+      <span id="opp-name-arena">Oponente</span>
+    </div>
+  </div>
+
+  <!-- Resultados de rodadas anteriores -->
+  <div id="round-results" class="round-results"></div>
+
+  <!-- Fase: seleção de poder -->
+  <div id="phase-select" class="batalha-phase px-3 pb-4">
+    <p class="select-title" id="select-title">Rodada 1 — Escolha seu ataque</p>
+    <div class="poderes-grid" id="poderes-grid"></div>
+    <button class="btn-atacar" id="btn-atacar" onclick="confirmarAtaque()" disabled>
+      Selecione um poder
+    </button>
+  </div>
+
+  <!-- Fase: animando -->
+  <div id="phase-fighting" class="batalha-phase text-center px-3 pb-4 hidden">
+    <div class="fighting-icon">⚡</div>
+    <p class="fighting-text">Atacando...</p>
+  </div>
+
+  <!-- Fase: resultado final -->
+  <div id="phase-result" class="batalha-phase px-3 pb-4 hidden">
+    <div class="result-card" id="result-card">
+      <p class="result-emoji" id="result-emoji">🏆</p>
+      <p class="result-title" id="result-title">Vitória!</p>
+      <p class="result-desc"  id="result-desc">Oponente perdeu 150 PS!</p>
+      <div class="result-ps"  id="result-ps">+200 PS</div>
+      <p class="result-timer">Voltando ao ranking em 3 segundos...</p>
+      <button class="btn-voltar" onclick="window.location.href='ranking.html'">
+        Voltar ao Ranking
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-cp" id="toast-cp"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/batalha.js"></script>
+</body>
+</html>
