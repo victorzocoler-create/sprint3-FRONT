@@ -22,7 +22,7 @@ Interface web gamificada para incentivar a saúde preventiva dos beneficiários 
 
 Não precisa instalar nada. Basta abrir o arquivo `index.html` no navegador.
 
-Ou acesse o deploy online: **https://SEU-LINK.vercel.app**
+Ou acesse o deploy online: **https://sprint3-front-virid.vercel.app**
 
 ## Funcionalidades
 
